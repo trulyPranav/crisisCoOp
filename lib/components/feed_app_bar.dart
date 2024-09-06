@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yuva_hack/pages/profile.dart';
 
 class ProfileComponent extends StatelessWidget implements PreferredSizeWidget {
   const ProfileComponent({super.key});
@@ -17,7 +18,9 @@ class ProfileComponent extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfilePage()));
+            },
             child: const Icon(Icons.account_circle_outlined,
               color: Colors.orange,
               size: 45,
@@ -29,5 +32,5 @@ class ProfileComponent extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(80.0); // Adjust height as needed
+  Size get preferredSize => const Size.fromHeight(80.0); // Adjust height as needed
 }

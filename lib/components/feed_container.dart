@@ -20,11 +20,17 @@ class _FeedcontainerState extends State<Feedcontainer> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: const EdgeInsets.only(top: 10, left: 20),
+            margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("Purushothhaman Nair", style: TextStyle(color: Colors.white, fontSize: 22),),
+                const Row(
+                  children: [
+                    Text("NAME HERE", style: TextStyle(color: Colors.white, fontSize: 22),),
+                    SizedBox(width: 6,),
+                    Image(image: AssetImage('assets/legendBadge.png'),height: 25,)
+                  ],
+                ),
                 const SizedBox(height: 5,),
                 Container(
                   padding: const EdgeInsets.fromLTRB(5, 2, 5, 2),
@@ -32,10 +38,10 @@ class _FeedcontainerState extends State<Feedcontainer> {
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(20)
                   ),
-                  child: const Text("URGENT!", style: TextStyle(color: Colors.white),),
+                  child: const Text("FLAIR", style: TextStyle(color: Colors.white),),
                 ),
                 const SizedBox(height:10,),
-                const Text("Help eyy veegem, no rice no water only pain", style: TextStyle(color: Colors.white),)
+                const Text("This'll contain all the help messages. Main text goes here.", style: TextStyle(color: Colors.white),)
               ],
             ),
           ),
