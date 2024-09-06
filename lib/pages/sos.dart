@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class SosScreen extends StatefulWidget {
   const SosScreen({super.key});
@@ -8,6 +10,50 @@ class SosScreen extends StatefulWidget {
 }
 
 class _SosScreenState extends State<SosScreen> {
+Future<void> _makePhoneCall(String phoneNumber) async {
+  final status = await Permission.phone.status;
+  if (status.isDenied) {
+    await Permission.phone.request();
+  }
+
+  if (await Permission.phone.isGranted) {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber.toString(),
+    );
+    try {
+      // if (await canLaunchUrl(launchUri)) {
+        await launchUrl(launchUri);
+//       } else {
+//         if (mounted) {
+//   ScaffoldMessenger.of(context).showSnackBar(
+//     SnackBar(
+//       content: Text('Could not place call to $phoneNumber'),
+//     ),
+//   );
+// }
+//       }
+    } catch (e) {
+      if (mounted) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text('Could not place call to $phoneNumber'),
+    ),
+  );
+}
+    }
+  } else {
+    if (mounted) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    const SnackBar(
+      content: Text('Permission denied'),
+    ),
+  );
+}
+  }
+}
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,15 +67,18 @@ class _SosScreenState extends State<SosScreen> {
             backgroundColor: Colors.red,
             elevation: 20,
           ),
-          onPressed: () {},
-          child: const Text("SOS",
+          onPressed: () {
+            _makePhoneCall("+918078116606");
+          },
+          child: const Text(
+            "SOS",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
-              fontSize: 75
+              fontSize: 75,
             ),
           ),
-        )
+        ),
       ),
     );
   }
