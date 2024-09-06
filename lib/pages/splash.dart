@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:yuva_hack/pages/constructor.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -29,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.black,
       body: Center(
         child: _screenChanger 
-            ? const Text('New Screen')
+            ? const Constructor()
             : LoadingAnimationWidget.threeRotatingDots(
                 color: Colors.white,
                 size: 100,
