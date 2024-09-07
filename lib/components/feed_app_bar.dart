@@ -11,7 +11,7 @@ class ProfileComponent extends StatelessWidget implements PreferredSizeWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text('crisisCoop',
+          const Text('CrisisCo-op',
             style: TextStyle(
               fontSize: 30,
               color: Colors.orange
@@ -23,7 +23,7 @@ class ProfileComponent extends StatelessWidget implements PreferredSizeWidget {
             },
             child: const Icon(Icons.account_circle_outlined,
               color: Colors.orange,
-              size: 45,
+              size: 43,
             ),
           )
         ],

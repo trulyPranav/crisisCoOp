@@ -12,10 +12,10 @@ class _FeedcontainerState extends State<Feedcontainer> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        shape: BoxShape.rectangle,
-        border: Border.all(color: Colors.white)
-      ),
+      // decoration: BoxDecoration(
+      //   shape: BoxShape.rectangle,
+      //   border: Border.all(color: Colors.white)
+      // ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -46,39 +46,39 @@ class _FeedcontainerState extends State<Feedcontainer> {
             ),
           ),
           const SizedBox(height: 20,),
-          Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              border: Border.all(color: Colors.white)
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    border: Border.all(color: Colors.white)
-                  ),
-                  child: const Icon(Icons.thumb_up_alt_outlined, color: Colors.white,)),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    border: Border.all(color: Colors.white)
-                  ),                  
-                  child: const Icon(Icons.wifi_protected_setup_sharp, color: Colors.white,)),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    border: Border.all(color: Colors.white)
-                  ),                  
-                  child: const Icon(Icons.report_gmailerrorred_outlined, color: Colors.white,))
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                // decoration: BoxDecoration(
+                //   shape: BoxShape.rectangle,
+                //   border: Border.all(color: Colors.white)
+                // ),
+                child: const Icon(Icons.thumb_up_alt_outlined, color: Colors.white,)),
+              Container(
+                padding: const EdgeInsets.all(10),
+                // decoration: BoxDecoration(
+                //   shape: BoxShape.rectangle,
+                //   border: Border.all(color: Colors.white)
+                // ),                  
+                child: const Icon(Icons.wifi_protected_setup_sharp, color: Colors.white,)),
+              Container(
+                padding: const EdgeInsets.all(10),
+                // decoration: BoxDecoration(
+                //   shape: BoxShape.rectangle,
+                //   border: Border.all(color: Colors.white)
+                // ),                  
+                child: const Icon(Icons.report_gmailerrorred_outlined, color: Colors.white,)),
+            ],
+          ),
+          const Divider(
+            color: Colors.grey,
+            endIndent: 0,
+            thickness: 1,
           )
         ],
+        
       ),
     );
   }

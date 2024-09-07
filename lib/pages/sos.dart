@@ -22,7 +22,7 @@ Future<void> _makePhoneCall(String phoneNumber) async {
       path: phoneNumber.toString(),
     );
     try {
-      // if (await canLaunchUrl(launchUri)) {
+//       if (await canLaunchUrl(launchUri)) {
         await launchUrl(launchUri);
 //       } else {
 //         if (mounted) {
@@ -68,7 +68,7 @@ Future<void> _makePhoneCall(String phoneNumber) async {
             elevation: 20,
           ),
           onPressed: () {
-            _makePhoneCall("+918078116606");
+            _makePhoneCall("112");
           },
           child: const Text(
             "SOS",
